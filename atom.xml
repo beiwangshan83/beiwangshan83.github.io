@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://beiwangshan83.github.io</id>
+    <title>ZHXH.CC</title>
+    <updated>2021-06-08T01:27:18.607Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://beiwangshan83.github.io"/>
+    <link rel="self" href="https://beiwangshan83.github.io/atom.xml"/>
+    <subtitle>相遇相识相知相爱</subtitle>
+    <logo>https://beiwangshan83.github.io/images/avatar.png</logo>
+    <icon>https://beiwangshan83.github.io/favicon.ico</icon>
+    <rights>All rights reserved 2021, ZHXH.CC</rights>
+    <entry>
+        <title type="html"><![CDATA[不需要服务器，使用GitHub和Gridea搭建笔记&博客程序]]></title>
+        <id>https://beiwangshan83.github.io/post/create-a-gridea-blog/</id>
+        <link href="https://beiwangshan83.github.io/post/create-a-gridea-blog/">
+        </link>
+        <updated>2021-06-08T01:23:36.000Z</updated>
+        <summary type="html"><![CDATA[<p>🤳又可以免费白嫖了</p>
+]]></summary>
+        <content type="html"><![CDATA[<p>🤳又可以免费白嫖了</p>
+<!-- more -->
+<h3 id="前言">前言</h3>
+<p>以前使用过HEXO和GitHub搭建过静态博客，可以参考这篇文章：<a href="https://www.beiwangshan.com/archives/8.html">www.beiwangshan.com</a></p>
+<p>但是觉得静态博客没有什么意思，于是转移到了typecho动态博客，还花钱整了服务器以及一些七七八八的东西。但是最近却觉得麻烦了，套了又拍云的CDN，最近访问量增加，每个月10G的免费流量不够了，又花了一笔钱，本来搭建一个博客就是非盈利的，反正也有其他的种种原因，让我觉得有些累了，于是先整一个静态的作为备用。看了其他的静态博客，我最终选择了使用Gridea。</p>
+<h3 id="什么是gridea">什么是Gridea？</h3>
+<p>Gridea 是一个静态博客写作客户端，帮助你更容易地构建并管理博客或任何静态站点。不像其他的静态博客，每次发表文章都需要指令面板输入指令，Gridea拥有很好的交互界面，让我们可以像在笔记软件上写文章一样方便。</p>
+<figure data-type="image" tabindex="1"><img src="https://cdn.jsdelivr.net/gh/beiwangshan83/images/img/20210607224310.jpeg" alt="不需要服务器，使用GitHub和Gridea搭建笔记&amp;博客程序" loading="lazy"></figure>
+<p>Gridea 只是负责将我们使用Markdown 编辑的内容制作成网页，在本地即可预览，你只需要一个现代浏览器即可，不需要任何第三方环境。</p>
+<h3 id="为什么选择gridea">为什么选择Gridea？</h3>
+<p>简单，方便，简洁；</p>
+<p>只需要简单的配置，就可以方便的书写博客，界面清爽简洁，丰富的主题也能满足需求。一键同步内容到GitHub，自动生成静态网页，实时发布在自己的静态博客上。免费且便捷。</p>
+<h3 id="如何使用gridea">如何使用Gridea？</h3>
+<p>几个简单的步骤来讲，大家跟着脚步就对啦💃，我会按照最优化的解决办法给大家介绍。</p>
+<p><code>GitHub Page</code>+<code>自定义域名</code>+<code>cloudflare CDN加速</code>+<code>好看的主题</code></p>
+<p>然后一步步解决~</p>
+<p>但是第一步还是安装<a href="https://gridea.dev/">Gridea</a></p>
+<h4 id="github-page">GitHub Page</h4>
+<p><strong>创建 GitHub 账号，并创建一个仓库 Token</strong>。点击<a href="https://github.com/">GitHub</a>，进行注册。登录 GitHub 之后，点击<a href="https://github.com/settings/tokens/new">这里</a>创建一个 Token，<strong>勾选上 repo 的相关权限即可</strong>。生成之后记得把 Token 复制到你的本地，因为一旦关闭网页将不能再看到它。</p>
+<figure data-type="image" tabindex="2"><img src="https://cdn.jsdelivr.net/gh/beiwangshan83/images/img/20210607224317.png" alt="不需要服务器，使用GitHub和Gridea搭建笔记&amp;博客程序" loading="lazy"></figure>
+<p><strong>创建仓库，存放构建后的网站文件</strong>。创建一个公开仓库，名为<strong>用户名.github.io</strong>。（将用户名替换为你的 GitHub 用户名）</p>
+<figure data-type="image" tabindex="3"><img src="https://cdn.jsdelivr.net/gh/beiwangshan83/images/img/20210607224325.png" alt="不需要服务器，使用GitHub和Gridea搭建笔记&amp;博客程序" loading="lazy"></figure>
+<p><strong>进入 Gridea 进行远程设置</strong>。按照下图的示例进行设置，然后点击「检测远程链接」，进行配置检查。</p>
+<figure data-type="image" tabindex="4"><img src="https://cdn.jsdelivr.net/gh/beiwangshan83/images/img/20210607224337.png" alt="不需要服务器，使用GitHub和Gridea搭建笔记&amp;博客程序" loading="lazy"></figure>
+<p><strong>同步</strong>。点击 Gridea 中的 同步按钮即可。初次部署等待几分钟之后就可以去浏览器访问了，默认地址为你在第 3 步所填写的域名。</p>
+<h4 id="自定义域名">自定义域名</h4>
+<p>在GitHub仓库的设置中找到<code>GitHub Pages</code>，来到GitHub Pages设置页面</p>
+<figure data-type="image" tabindex="5"><img src="https://cdn.jsdelivr.net/gh/beiwangshan83/images/img/20210607220922.png" alt="不需要服务器，使用GitHub和Gridea搭建笔记&amp;博客程序" loading="lazy"></figure>
+<p>然后做如下的设置：</p>
+<figure data-type="image" tabindex="6"><img src="https://cdn.jsdelivr.net/gh/beiwangshan83/images/img/20210607221057.png" alt="不需要服务器，使用GitHub和Gridea搭建笔记&amp;博客程序" loading="lazy"></figure>
+<p>其中选择Source，是网站的源码所在位置</p>
+<p>然后设置自定义域名<code>Custom domain</code></p>
+<p>此域名需要在域名购买处做解析，在配置时，只需要将 DNS 配置里面的 A 记录指向这 4 个 IP 地址中的至少一个</p>
+<pre><code class="language-bash">185.199.108.153
+185.199.109.153
+185.199.110.153
+185.199.111.153
+</code></pre>
+<p>配置后的状态如下：</p>
+<figure data-type="image" tabindex="7"><img src="https://cdn.jsdelivr.net/gh/beiwangshan83/images/img/20210608084629.png" alt="不需要服务器，使用GitHub和Gridea搭建笔记&amp;博客程序" loading="lazy"></figure>
+<p>做好这里，你的自定义域名就算成功。</p>
+<h4 id="cloudflare-cdn加速">cloudflare CDN加速</h4>
+<p>cloudflare 是一家国外的 CDN 加速服务商，还是很有名气的。提供免费和付费的加速和网站保护服务。百度云加速的国外节点就是和 cloudflare 合作使用的 cloudflare 的节点。cloudflare 提供了不同类型的套餐，即使是免费用户，cloudflare 提供的功能也是很全面的。</p>
+<p>进入：https://dash.cloudflare.com/注册后并添加域名，需要修改DNS服务器地址，验证之后即可使用。</p>
+<p>下面介绍一些设置：</p>
+<h5 id="ssltls"><strong>SSL/TLS</strong></h5>
+<ul>
+<li>SSL/TLS 加密模式选择 <code>完全（严格）</code>模式</li>
+<li>始终使用 HTTPS 设置为<code>开</code></li>
+<li>最低 TLS 版本选择<code>TLS1.0</code></li>
+<li>随机加密设置为<code>开</code></li>
+<li>TLS 1.3设置为<code>开</code></li>
+<li>自动 HTTPS 重写设置为<code>开</code></li>
+</ul>
+<p>然后证书啥的都去安装上。基本上就可以使用了。</p>
+<h4 id="好看的主题">好看的主题</h4>
+<p>我推荐的主题是：<a href="https://imhanjie.com/post/gridea-theme-pure/">Gridea 主题 - Pure | imhanjie</a></p>
+<p>感觉比较清爽，用起来也十分方便，我们只需要去GitHub下载主题，然后在客户端进行安装即可。本地的项目地址一般是：<code>C:/Users/用户名/Documents/Gridea</code></p>
+<p>主题中有许多简单的配置</p>
+<figure data-type="image" tabindex="8"><img src="https://cdn.jsdelivr.net/gh/beiwangshan83/images/img/20210607223700.png" alt="不需要服务器，使用GitHub和Gridea搭建笔记&amp;博客程序" loading="lazy"></figure>
+<figure data-type="image" tabindex="9"><img src="https://cdn.jsdelivr.net/gh/beiwangshan83/images/img/20210607223720.png" alt="不需要服务器，使用GitHub和Gridea搭建笔记&amp;博客程序" loading="lazy"></figure>
+<p>显示效果：</p>
+<figure data-type="image" tabindex="10"><img src="https://cdn.jsdelivr.net/gh/beiwangshan83/images/img/20210607223652.png" alt="不需要服务器，使用GitHub和Gridea搭建笔记&amp;博客程序" loading="lazy"></figure>
+<h2 id="持续更新中">持续更新中</h2>
+]]></content>
+    </entry>
+</feed>
